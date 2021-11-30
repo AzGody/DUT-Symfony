@@ -1,3 +1,13 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /
+    controller: App\Controller\OpenClassDutController::index
+entrprise: 
+    path: /entreprises
+    controller: App\Controller\OpenClassDutController::entreprise
+formations: 
+    path: /formations
+    controller: App\Controller\OpenClassDutController::formations
+stages: 
+    path: /stages/{id}
+    controller: App\Controller\OpenClassDutController::stages
+
