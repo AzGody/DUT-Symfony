@@ -1,13 +1,18 @@
 index:
-    path: /
-    controller: App\Controller\OpenClassDutController::index
-entrprise: 
-    path: /entreprises
-    controller: App\Controller\OpenClassDutController::entreprise
-formations: 
-    path: /formations
-    controller: App\Controller\OpenClassDutController::formations
-stages: 
-    path: /stages/{id}
-    controller: App\Controller\OpenClassDutController::stages
-
+   path: /
+   controller: App\Controller\OpenClassDutController::index
+stages:
+   path: /stages/{id}
+   controller: App\Controller\OpenClassDutController::stages
+formations:
+   path: /formations
+   controller: App\Controller\OpenClassDutController::formations
+formations_stage:
+   path: /formations/{id}
+   controller: App\Controller\OpenClassDutController::formations_stage
+entreprises:
+   path: /entreprises
+   controller: App\Controller\OpenClassDutController::entreprises
+entreprises_stage:
+   path: /entreprises/{id}
+   controller: App\Controller\OpenClassDutController::entreprises_stage

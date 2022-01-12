@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}OpenClassDutController{% endblock %}
+{% block title %}Stages{% endblock %}
 
 {% block body %}
 <style>
@@ -9,6 +9,39 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Bienvenue sur la page de stages {{ id }}</h1>
+    <h1>Cette page affiche le descriptif du stage</h1>
+
+    <div class="card">
+        <div class="card-header">
+            {{ stage.titre }}
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{ stage.descMission }}</p>
+            <h5 class="card-title">Formation:</h5>
+            <ul>
+                {% for formation in stage.formation %}
+                    <li>{{ formation.nomCourt }}</li>
+                {% endfor %}
+            </ul>
+            <h5 class="card-title">{{ stage.entreprise.nom }}</h5>
+            <ul>
+                <li>Activité: {{ stage.entreprise.activite }}</li>
+                <li>Adresse: {{ stage.entreprise.adresse }}</li>
+                <li>Email: {{ stage.emailContact }}</li>
+            </ul>
+        </div>
+    </div>
 </div>
 {% endblock %}
+
+{#
+
+titre du stage -
+nom de l'entreprise -
+activité de l'entreprise
+adresse de l'entreprise
+description des missions à réaliser
+la ou les formations pour lesquelles le stage est proposé -
+email de contact
+
+#}

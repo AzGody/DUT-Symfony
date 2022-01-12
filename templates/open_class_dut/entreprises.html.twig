@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entreprises{% endblock %}
+
+{% block body %}
+<style>
+  .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+  .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+  .card {
+    margin-top: 10px;
+  }
+</style>
+
+<div class="example-wrapper">
+  <h1>Cette page affiche la liste des entreprises proposant un stage</h1>
+
+  {% for entrepriseUnique in listeEntreprise %}
+  <div class="card">
+    <div class="card-header">
+      {{ entrepriseUnique.nom }}
+    </div>
+    <div class="card-body">
+      <a href="{{ path('entreprises_stage', {id:entrepriseUnique.id}) }}" class="btn btn-primary">Voir les stages de cette Entreprise</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
